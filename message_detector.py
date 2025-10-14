@@ -12,27 +12,9 @@ class MessageDetector:
     """Detects Slack message commands and extracts message content + channel intelligently."""
     
     TRIGGER_PHRASES = [
-        # Message sending variations
-        "send message",
-        "send a message",
-        "post message",
-        "post a message",
         "send slack message",
-        "slack message",
-        
-        # Channel posting variations
-        "post to",
-        "post in",
-        "send to",
-        "send in",
-        "message to",
-        "message in",
-        
-        # Slack specific
-        "slack post",
-        "slack send",
-        "post on slack",
-        "send on slack"
+        "post slack message",
+        "post in slack"
     ]
     
     @staticmethod

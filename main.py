@@ -1,9 +1,14 @@
 from fastapi import FastAPI, Request, HTTPException, Query
 from fastapi.responses import HTMLResponse, RedirectResponse, JSONResponse
 import os
+import sys
 from dotenv import load_dotenv
 from typing import List, Dict, Any
 import secrets
+import asyncio
+
+# Force unbuffered output for instant logs
+sys.stdout.reconfigure(line_buffering=True) if hasattr(sys.stdout, 'reconfigure') else None
 
 from simple_storage import SimpleUserStorage, SimpleSessionStorage
 from slack_client import SlackClient
@@ -23,6 +28,124 @@ app = FastAPI(
 
 # Store OAuth states temporarily (in production, use Redis or similar)
 oauth_states = {}
+
+# Background task for timeout monitoring
+background_task = None
+
+
+async def monitor_session_timeouts():
+    """Background task that monitors sessions and processes them if idle for 5+ seconds."""
+    print("🕐 Timeout monitor started", flush=True)
+    
+    while True:
+        try:
+            await asyncio.sleep(1)  # Check every second
+            
+            from simple_storage import sessions
+            
+            # Check all active recording sessions
+            for session_id, session in list(sessions.items()):
+                if session.get("message_mode") != "recording":
+                    continue
+                
+                # Check idle time
+                idle_time = SimpleSessionStorage.get_session_idle_time(session_id)
+                
+                if idle_time and idle_time > 5:
+                    segments_count = session.get("segments_count", 0)
+                    
+                    # Only process if we have minimum content
+                    if segments_count >= 2:
+                        print(f"⏰ TIMEOUT MONITOR: Processing session {session_id} after {idle_time:.1f}s idle", flush=True)
+                        
+                        # Get user
+                        uid = session.get("uid")
+                        user = SimpleUserStorage.get_user(uid)
+                        
+                        if user:
+                            # Mark as processing
+                            SimpleSessionStorage.update_session(
+                                session_id,
+                                message_mode="processing"
+                            )
+                            
+                            accumulated = session.get("accumulated_text", "")
+                            
+                            # Process the message
+                            try:
+                                # Fetch fresh channels
+                                channels = slack_client.list_channels(user["access_token"])
+                                
+                                if channels:
+                                    SimpleUserStorage.save_user(
+                                        uid=user["uid"],
+                                        access_token=user["access_token"],
+                                        team_id=user.get("team_id"),
+                                        team_name=user.get("team_name"),
+                                        selected_channel=user.get("selected_channel"),
+                                        available_channels=channels
+                                    )
+                                
+                                # AI extracts channel and message
+                                channel_id, channel_name, message = await message_detector.ai_extract_message_and_channel(
+                                    accumulated,
+                                    channels
+                                )
+                                
+                                # If no channel, use default
+                                if not channel_id:
+                                    channel_id = user.get("selected_channel")
+                                    if channel_id:
+                                        for ch in channels:
+                                            if ch["id"] == channel_id:
+                                                channel_name = ch["name"]
+                                                break
+                                
+                                if channel_id and message and len(message.strip()) >= 3:
+                                    print(f"⏰ Sending timeout message to #{channel_name}", flush=True)
+                                    
+                                    result = await slack_client.send_message(
+                                        access_token=user["access_token"],
+                                        channel_id=channel_id,
+                                        text=message
+                                    )
+                                    
+                                    if result and result.get("success"):
+                                        print(f"⏰ SUCCESS! Timeout message sent to #{channel_name}", flush=True)
+                                    else:
+                                        print(f"⏰ FAILED: {result.get('error') if result else 'Unknown'}", flush=True)
+                                
+                                # Reset session
+                                SimpleSessionStorage.reset_session(session_id)
+                                
+                            except Exception as e:
+                                print(f"⏰ Error processing timeout: {e}", flush=True)
+                                SimpleSessionStorage.reset_session(session_id)
+                    else:
+                        # Not enough content, just reset
+                        print(f"⏰ Timeout with insufficient content ({segments_count} segments), resetting", flush=True)
+                        SimpleSessionStorage.reset_session(session_id)
+        
+        except Exception as e:
+            print(f"❌ Timeout monitor error: {e}", flush=True)
+            await asyncio.sleep(5)  # Wait longer on error
+
+
+@app.on_event("startup")
+async def startup_event():
+    """Start background timeout monitor."""
+    global background_task
+    background_task = asyncio.create_task(monitor_session_timeouts())
+    print("✅ Background timeout monitor started", flush=True)
+
+
+@app.on_event("shutdown")
+async def shutdown_event():
+    """Stop background timeout monitor."""
+    global background_task
+    if background_task:
+        background_task.cancel()
+        print("🛑 Background timeout monitor stopped", flush=True)
 
 
 @app.get("/")
@@ -97,13 +220,13 @@ async def root(uid: str = Query(None)):
                     <div class="card">
                         <h3>🎯 Example Commands</h3>
                         <div class="example">
-                            "Send message to general saying hello team!"
+                            "Send Slack message to general saying hello team!"
                         </div>
                         <div class="example">
-                            "Post in marketing that the campaign is live"
+                            "Post Slack message in marketing that the campaign is live"
                         </div>
                         <div class="example">
-                            "Slack message to random saying great idea!"
+                            "Post in Slack to random saying great idea!"
                         </div>
                     </div>
                     
@@ -154,9 +277,19 @@ async def root(uid: str = Query(None)):
                     <button class="btn btn-primary btn-block" onclick="updateChannel()">
                         💾 Save Default Channel
                     </button>
-                    <button class="btn btn-secondary btn-block" onclick="refreshChannels()">
+                    <button type="button" class="btn btn-secondary btn-block" onclick="refreshChannels()">
                         🔄 Refresh Channels
                     </button>
+                    <button type="button" class="btn btn-secondary btn-block" onclick="logoutUser()" style="margin-top: 20px; border-color: #e01e5a; color: #e01e5a;">
+                        🚪 Logout & Clear Data
+                    </button>
+                </div>
+                
+                <div class="card" style="background: rgba(29, 155, 209, 0.05); border-color: #1d9bd1;">
+                    <h3 style="font-size: 16px;">ℹ️ Reset or Re-authenticate</h3>
+                    <p style="text-align: left; font-size: 14px; margin-bottom: 0; color: #9ca0a5;">
+                        Use <strong>"Logout & Clear Data"</strong> to reset your connection and re-authenticate to the same workspace with fresh settings.
+                    </p>
                 </div>
                 
                 <div class="card">
@@ -168,13 +301,13 @@ async def root(uid: str = Query(None)):
                         <div class="step">
                             <div class="step-number">1</div>
                             <div class="step-content">
-                                Say <strong>"Send message to [channel]"</strong> or just <strong>"Send message"</strong>
+                                Say <strong>"Send Slack message"</strong>, <strong>"Post Slack message"</strong>, or <strong>"Post in Slack"</strong>
                             </div>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
                             <div class="step-content">
-                                Speak your message - AI handles the rest
+                                Mention the channel and speak your message - AI handles the rest
                             </div>
                         </div>
                         <div class="step">
@@ -232,21 +365,36 @@ async def root(uid: str = Query(None)):
                     }}
                 }}
                 
-                async function refreshChannels() {{
-                    if (!confirm('Refresh channel list from Slack?')) return;
-                    
+                function refreshChannels() {{
+                    fetch('/refresh-channels?uid={uid}', {{
+                        method: 'POST'
+                    }})
+                    .then(response => response.json())
+                    .then(data => {{
+                        if (data.success) {{
+                            alert('✅ Channels refreshed! Reloading...');
+                            window.location.reload();
+                        }} else {{
+                            alert('❌ Failed: ' + data.error);
+                        }}
+                    }})
+                    .catch(error => {{
+                        alert('❌ Error: ' + error.message);
+                    }});
+                }}
+                
+                async function logoutUser() {{
                     try {{
-                        const response = await fetch('/refresh-channels?uid={uid}', {{
+                        const response = await fetch('/logout?uid={uid}', {{
                             method: 'POST'
                         }});
                         
                         const data = await response.json();
                         
                         if (data.success) {{
-                            alert('✅ Channels refreshed! Reloading page...');
-                            window.location.reload();
+                            window.location.href = '/?uid={uid}';
                         }} else {{
-                            alert('❌ Failed to refresh: ' + data.error);
+                            alert('❌ Logout failed: ' + data.error);
                         }}
                     }} catch (error) {{
                         alert('❌ Error: ' + error.message);
@@ -474,6 +622,31 @@ async def refresh_channels(uid: str = Query(...)):
         return {"success": False, "error": str(e)}
 
 
+@app.post("/logout")
+async def logout(uid: str = Query(...)):
+    """Logout user - clear all data and sessions."""
+    try:
+        from simple_storage import users, sessions, save_users, save_sessions
+        
+        # Remove user data
+        if uid in users:
+            del users[uid]
+            save_users()
+            print(f"🚪 Logged out user {uid[:10]}...", flush=True)
+        
+        # Remove any active sessions for this user
+        sessions_to_remove = [sid for sid, sess in sessions.items() if sess.get("uid") == uid]
+        for sid in sessions_to_remove:
+            del sessions[sid]
+        if sessions_to_remove:
+            save_sessions()
+            print(f"🧹 Cleared {len(sessions_to_remove)} sessions", flush=True)
+        
+        return {"success": True, "message": "Logged out successfully"}
+    except Exception as e:
+        return {"success": False, "error": str(e)}
+
+
 @app.post("/webhook")
 async def webhook(
     request: Request,
@@ -539,7 +712,7 @@ async def webhook(
     response_message = await process_segments(session, segments, user)
     
     # Only send notifications for final message post
-    if response_message and ("✅ Message sent:" in response_message or "❌" in response_message):
+    if response_message and ("✅ Message sent" in response_message or "❌" in response_message):
         print(f"✉️  USER NOTIFICATION: {response_message}", flush=True)
         return {
             "message": response_message,
@@ -558,9 +731,10 @@ async def process_segments(
     user: dict
 ) -> str:
     """
-    Collect exactly 3 segments after trigger, then AI extracts message + channel.
+    Collect up to 5 segments after trigger, or timeout after 5s gap.
     - Segment 1: Contains trigger + start of message
-    - Segments 2-3: Continued message content
+    - Segments 2-5: Continued message content (max)
+    - Timeout: If 5+ seconds gap after any segment, process what we have
     - AI extracts channel and message content
     
     For test interface: processes the entire text immediately.
@@ -573,7 +747,7 @@ async def process_segments(
     is_test_session = session_id.startswith("test_session")
     
     print(f"🔍 Received: '{full_text}'", flush=True)
-    print(f"📊 Session mode: {session['message_mode']}, Count: {session.get('segments_count', 0)}/3", flush=True)
+    print(f"📊 Session mode: {session['message_mode']}, Count: {session.get('segments_count', 0)}/5", flush=True)
     
     # Check for trigger phrase (but only if not already recording)
     if message_detector.detect_trigger(full_text) and session["message_mode"] == "idle":
@@ -586,8 +760,21 @@ async def process_segments(
         if is_test_session and len(message_content) > 10:
             print(f"🧪 Test mode: Processing full text immediately...", flush=True)
             
-            # Get available channels
-            channels = user.get("available_channels", [])
+            # Fetch fresh channels from Slack (always up-to-date)
+            print(f"🔄 Fetching fresh channel list from Slack...", flush=True)
+            channels = slack_client.list_channels(user["access_token"])
+            
+            # Update cached channels for next time
+            if channels:
+                SimpleUserStorage.save_user(
+                    uid=user["uid"],
+                    access_token=user["access_token"],
+                    team_id=user.get("team_id"),
+                    team_name=user.get("team_name"),
+                    selected_channel=user.get("selected_channel"),
+                    available_channels=channels
+                )
+                print(f"✅ Refreshed {len(channels)} channels", flush=True)
             
             # AI extracts channel and message from full text
             channel_id, channel_name, message = await message_detector.ai_extract_message_and_channel(
@@ -650,15 +837,41 @@ async def process_segments(
         accumulated += " " + full_text
         segments_count += 1
         
-        print(f"📝 Segment {segments_count}/3: '{full_text}'", flush=True)
+        print(f"📝 Segment {segments_count}/5: '{full_text}'", flush=True)
         print(f"📚 Full accumulated: '{accumulated[:150]}...'", flush=True)
         
-        # Collect 3 segments
-        if segments_count >= 3:
-            print(f"✅ Got all 3 segments! Processing...", flush=True)
+        # Update session with new segment
+        SimpleSessionStorage.update_session(
+            session_id,
+            accumulated_text=accumulated,
+            segments_count=segments_count
+        )
+        
+        # Process ONLY if we hit max 5 segments (background task handles timeout)
+        if segments_count >= 5:
+            print(f"✅ Max segments reached ({segments_count})! Processing...", flush=True)
             
-            # Get available channels
-            channels = user.get("available_channels", [])
+            # Mark as processing to prevent duplicates
+            SimpleSessionStorage.update_session(
+                session_id,
+                message_mode="processing"
+            )
+            
+            # Fetch fresh channels from Slack (always up-to-date)
+            print(f"🔄 Fetching fresh channel list from Slack...", flush=True)
+            channels = slack_client.list_channels(user["access_token"])
+            
+            # Update cached channels for next time
+            if channels:
+                SimpleUserStorage.save_user(
+                    uid=user["uid"],
+                    access_token=user["access_token"],
+                    team_id=user.get("team_id"),
+                    team_name=user.get("team_name"),
+                    selected_channel=user.get("selected_channel"),
+                    available_channels=channels
+                )
+                print(f"✅ Refreshed {len(channels)} channels", flush=True)
             
             # AI extracts channel and message
             channel_id, channel_name, message = await message_detector.ai_extract_message_and_channel(
@@ -703,12 +916,9 @@ async def process_segments(
                 print(f"❌ FAILED: {error}", flush=True)
                 return f"❌ Failed: {error}"
         else:
-            # Still collecting
-            SimpleSessionStorage.update_session(
-                session_id,
-                accumulated_text=accumulated,
-                segments_count=segments_count
-            )
+            # Still collecting (not at max yet)
+            # Session already updated above, just wait for more segments or timeout
+            print(f"⏳ Collecting more segments ({segments_count}/5)... [Background monitor will handle timeout]", flush=True)
             return f"collecting_{segments_count}"
     
     # If already processing, ignore
@@ -768,6 +978,7 @@ async def test_interface(uid: str = Query("test_user_123"), dev: str = Query(Non
                     </div>
                     <button class="btn btn-primary" onclick="authenticate()">🔐 Authenticate Slack</button>
                     <button class="btn btn-secondary" onclick="checkAuth()">🔍 Check Auth Status</button>
+                    <button class="btn btn-secondary" onclick="logoutUser()" style="border-color: #e01e5a; color: #e01e5a;">🚪 Logout</button>
                     <div id="authStatus" style="margin-top: 10px;"></div>
                 </div>
 
@@ -775,7 +986,7 @@ async def test_interface(uid: str = Query("test_user_123"), dev: str = Query(Non
                     <h2>Test Voice Commands</h2>
                     <div class="input-group">
                         <label>What would you say to OMI:</label>
-                        <textarea id="voiceInput" rows="5" placeholder='Example: "Send message to general saying hello team, hope everyone is doing great today!"'></textarea>
+                        <textarea id="voiceInput" rows="5" placeholder='Example: "Send Slack message to general saying hello team, hope everyone is doing great today!"'></textarea>
                     </div>
                     <button class="btn btn-primary" onclick="sendCommand()">🎤 Send Command</button>
                     <button class="btn btn-secondary" onclick="clearLogs()">🗑️ Clear Logs</button>
@@ -786,13 +997,13 @@ async def test_interface(uid: str = Query("test_user_123"), dev: str = Query(Non
                 <div class="card">
                     <h3>Quick Examples (Click to use)</h3>
                     <div class="example" onclick="useExample(this)">
-                        Send message to general saying hello team, great work on the project!
+                        Send Slack message to general saying hello team, great work on the project!
                     </div>
                     <div class="example" onclick="useExample(this)">
-                        Post in marketing that the new campaign is now live!
+                        Post Slack message in marketing that the new campaign is now live!
                     </div>
                     <div class="example" onclick="useExample(this)">
-                        Slack message to random saying just had an amazing idea about this
+                        Post in Slack to random saying just had an amazing idea about this
                     </div>
                 </div>
 
@@ -911,6 +1122,28 @@ async def test_interface(uid: str = Query("test_user_123"), dev: str = Query(Non
                 function clearLogs() {{
                     document.getElementById('log').innerHTML = '<div class="log-entry"><span class="timestamp">Cleared</span><span>Logs cleared</span></div>';
                     setStatus('');
+                }}
+                
+                async function logoutUser() {{
+                    const uid = document.getElementById('uid').value;
+                    
+                    try {{
+                        addLog('Logging out...');
+                        const response = await fetch(`/logout?uid=${{uid}}`, {{
+                            method: 'POST'
+                        }});
+                        
+                        const data = await response.json();
+                        
+                        if (data.success) {{
+                            addLog('✅ Logged out successfully');
+                            setTimeout(() => checkAuth(), 500);
+                        }} else {{
+                            addLog('❌ Logout failed: ' + data.error);
+                        }}
+                    }} catch (error) {{
+                        addLog('❌ Error: ' + error.message);
+                    }}
                 }}
                 
                 window.onload = () => checkAuth();
@@ -1344,11 +1577,11 @@ if __name__ == "__main__":
     port = int(os.getenv("APP_PORT", 8000))
     host = os.getenv("APP_HOST", "0.0.0.0")
     
-    print("💬 OMI Slack Messages Integration")
-    print("=" * 50)
-    print("✅ Using file-based storage")
-    print(f"🚀 Starting on {host}:{port}")
-    print("=" * 50)
+    print("💬 OMI Slack Messages Integration", flush=True)
+    print("=" * 50, flush=True)
+    print("✅ Using file-based storage", flush=True)
+    print(f"🚀 Starting on {host}:{port}", flush=True)
+    print("=" * 50, flush=True)
     
     uvicorn.run(
         "main:app",

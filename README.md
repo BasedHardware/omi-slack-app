@@ -25,38 +25,36 @@ Voice-activated Slack messaging through your OMI device. Simply say "Send messag
    - Say: "Post in marketing that the campaign is live"
    - Say: "Slack message to random saying great idea!"
 
-### Trigger Phrases
+### Trigger Phrases (ONLY these 3)
 
-- "Send message"
-- "Send message to [channel]"
-- "Post message"
-- "Post in [channel]"
-- "Slack message"
-- "Message to [channel]"
+- **"Send Slack message"** - "Send Slack message to general saying..."
+- **"Post Slack message"** - "Post Slack message in marketing that..."
+- **"Post in Slack"** - "Post in Slack to random saying..."
 
 ### How It Works
 
 **The app intelligently processes your voice commands:**
 1. Detects trigger phrase → Starts collecting
-2. Collects 3 segments (~10-15 seconds) for complete context
+2. Collects up to 5 segments OR stops if 5+ second gap detected
 3. AI extracts:
    - Channel name (fuzzy matches to your workspace channels)
    - Message content (cleaned and formatted)
-4. Posts message to Slack
-5. Notifies you with confirmation! 🎉
+4. Fetches fresh channel list automatically (new channels work immediately!)
+5. Posts message to Slack
+6. Notifies you with confirmation! 🎉
 
 **Example:**
 ```
-You: "Send message to general saying hello team"
-     [collecting silently...]
+You: "Send Slack message to general saying hello team"
+     [collecting segment 1/5...]
 You: "hope everyone is having a great day"
-     [collecting silently...]
-You: "let's catch up later this week"
-     → AI processes all 3 segments
+     [collecting segment 2/5...]
+     [5+ second pause - timeout!]
+     → AI processes 2 segments
      
 AI Extracted:
 Channel: #general
-Message: "Hello team, hope everyone is having a great day. Let's catch up later this week."
+Message: "Hello team, hope everyone is having a great day."
 
      → Message sent! 🔔
 ```
@@ -182,7 +180,10 @@ OPENAI_API_KEY
 OAUTH_REDIRECT_URL=https://your-app.up.railway.app/auth/callback
 APP_HOST=0.0.0.0
 APP_PORT=8000
+PYTHONUNBUFFERED=1
 ```
+
+**Note**: `PYTHONUNBUFFERED=1` ensures instant log output (no buffering delays)
 
 ## 🧪 Testing
 
@@ -225,17 +226,19 @@ Message: "Hello team, hope you're all doing great today"
 ## 📊 How Segments Work
 
 **OMI sends transcripts in segments** as you speak. The app:
-- ✅ Detects trigger phrase
-- ✅ Collects exactly 3 segments
+- ✅ Detects trigger phrase (Send Slack message / Post Slack message / Post in Slack)
+- ✅ Collects up to 5 segments MAX
+- ✅ Processes early if 5+ second gap detected (minimum 2 segments)
 - ✅ Silent during collection (no spam)
-- ✅ AI processes all 3 together
+- ✅ AI processes all collected segments together
 - ✅ One notification on completion
 
-**Why 3 segments?**
-- Captures channel name + message content
-- ~10-15 seconds of speech
-- AI has full context for extraction
-- Balances speed vs completeness
+**Smart Collection:**
+- **Max segments:** 5 (including trigger)
+- **Timeout:** 5 seconds of silence → processes immediately
+- **Minimum:** 2 segments (trigger + content)
+- **Duration:** ~5-20 seconds depending on speech
+- **Auto-refresh:** Fetches latest channels every time (new channels work immediately!)
 
 ## 📱 Channel Management
 
@@ -256,10 +259,18 @@ Set a default channel in settings, then just say:
 
 ### Refreshing Channel List
 
-Click "Refresh Channels" to:
-- Fetch latest list from Slack
-- Include newly created channels
-- Update channel permissions
+The app **automatically fetches fresh channels** every time you send a message, so new channels work immediately without manual refresh!
+
+You can also manually refresh:
+- Click "Refresh Channels" button on homepage
+- Or re-authenticate to get latest channels
+
+### Switching Workspaces
+
+Click "Switch Workspace" to:
+- Connect to a different Slack workspace
+- Re-authenticate with new team
+- Switch between multiple workspaces easily
 
 ## 🔐 Security & Privacy
 

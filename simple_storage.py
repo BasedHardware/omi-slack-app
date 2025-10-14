@@ -31,31 +31,31 @@ def load_storage():
         if os.path.exists(USERS_FILE):
             with open(USERS_FILE, 'r') as f:
                 users = json.load(f)
-                print(f"✅ Loaded {len(users)} users from storage")
+                print(f"✅ Loaded {len(users)} users from storage", flush=True)
     except Exception as e:
-        print(f"⚠️  Could not load users: {e}")
+        print(f"⚠️  Could not load users: {e}", flush=True)
     
     try:
         if os.path.exists(SESSIONS_FILE):
             with open(SESSIONS_FILE, 'r') as f:
                 sessions = json.load(f)
-                print(f"✅ Loaded {len(sessions)} sessions from storage")
+                print(f"✅ Loaded {len(sessions)} sessions from storage", flush=True)
     except Exception as e:
-        print(f"⚠️  Could not load sessions: {e}")
+        print(f"⚠️  Could not load sessions: {e}", flush=True)
 
 def save_users():
     try:
         with open(USERS_FILE, 'w') as f:
             json.dump(users, f, default=str, indent=2)
     except Exception as e:
-        print(f"⚠️  Could not save users: {e}")
+        print(f"⚠️  Could not save users: {e}", flush=True)
 
 def save_sessions():
     try:
         with open(SESSIONS_FILE, 'w') as f:
             json.dump(sessions, f, default=str, indent=2)
     except Exception as e:
-        print(f"⚠️  Could not save sessions: {e}")
+        print(f"⚠️  Could not save sessions: {e}", flush=True)
 
 # Load on module import
 load_storage()
@@ -95,7 +95,7 @@ class SimpleUserStorage:
             users[uid]["available_channels"] = available_channels
         
         save_users()  # Persist to file
-        print(f"💾 Saved data for user {uid[:10]}...")
+        print(f"💾 Saved data for user {uid[:10]}...", flush=True)
     
     @staticmethod
     def update_channel_selection(uid: str, selected_channel: str):
@@ -104,7 +104,7 @@ class SimpleUserStorage:
             users[uid]["selected_channel"] = selected_channel
             users[uid]["updated_at"] = datetime.utcnow().isoformat()
             save_users()
-            print(f"📝 Updated channel for {uid[:10]}... to {selected_channel}")
+            print(f"📝 Updated channel for {uid[:10]}... to {selected_channel}", flush=True)
             return True
         return False
     

@@ -18,13 +18,15 @@ class SlackClient:
     def get_authorization_url(self, redirect_uri: str, state: str) -> str:
         """
         Generate Slack OAuth authorization URL.
-        Scopes: channels:read, chat:write, users:read
+        Uses USER token scopes so messages appear as sent by the user, not a bot.
         """
-        scopes = "channels:read,chat:write,users:read,groups:read,im:read,mpim:read"
+        # User token scopes (messages appear as the user)
+        user_scopes = "channels:read,chat:write,groups:read,users:read"
+        
         auth_url = (
             f"https://slack.com/oauth/v2/authorize?"
             f"client_id={self.client_id}&"
-            f"scope={scopes}&"
+            f"user_scope={user_scopes}&"
             f"redirect_uri={redirect_uri}&"
             f"state={state}"
         )
@@ -33,7 +35,7 @@ class SlackClient:
     def exchange_code_for_token(self, code: str, redirect_uri: str) -> dict:
         """
         Exchange authorization code for access token.
-        Returns token data including access_token and team info.
+        Returns USER token so messages appear as sent by the user, not a bot.
         """
         try:
             response = requests.post(
@@ -49,8 +51,19 @@ class SlackClient:
             if response.status_code == 200:
                 data = response.json()
                 if data.get("ok"):
+                    # Use the USER token (authed_user) instead of bot token
+                    authed_user = data.get("authed_user", {})
+                    user_token = authed_user.get("access_token")
+                    
+                    if not user_token:
+                        # Fallback to bot token if user token not available
+                        user_token = data.get("access_token")
+                        print("⚠️ Using bot token (user token not available)", flush=True)
+                    else:
+                        print("✅ Using user token (messages will appear as user)", flush=True)
+                    
                     return {
-                        "access_token": data.get("access_token"),
+                        "access_token": user_token,
                         "team_id": data.get("team", {}).get("id"),
                         "team_name": data.get("team", {}).get("name"),
                         "scope": data.get("scope")
@@ -61,7 +74,7 @@ class SlackClient:
                 raise Exception(f"Token exchange failed: {response.status_code}")
                 
         except Exception as e:
-            print(f"❌ Token exchange error: {e}")
+            print(f"❌ Token exchange error: {e}", flush=True)
             raise
     
     def list_channels(self, access_token: str) -> List[Dict]:
@@ -93,10 +106,10 @@ class SlackClient:
             return channels
             
         except SlackApiError as e:
-            print(f"❌ Error listing channels: {e.response['error']}")
+            print(f"❌ Error listing channels: {e.response['error']}", flush=True)
             return []
         except Exception as e:
-            print(f"❌ Error listing channels: {e}")
+            print(f"❌ Error listing channels: {e}", flush=True)
             return []
     
     async def send_message(
@@ -106,7 +119,7 @@ class SlackClient:
         text: str
     ) -> Optional[dict]:
         """
-        Send a message to a Slack channel.
+        Send a message to a Slack channel as the authenticated user.
         Returns message data if successful.
         """
         client = WebClient(token=access_token)
@@ -114,7 +127,8 @@ class SlackClient:
         try:
             result = client.chat_postMessage(
                 channel=channel_id,
-                text=text
+                text=text,
+                as_user=True  # Ensure message is posted as the user, not as a bot
             )
             
             if result.get("ok"):
@@ -132,13 +146,13 @@ class SlackClient:
                 
         except SlackApiError as e:
             error_msg = e.response.get('error', str(e))
-            print(f"❌ Slack API error: {error_msg}")
+            print(f"❌ Slack API error: {error_msg}", flush=True)
             return {
                 "success": False,
                 "error": error_msg
             }
         except Exception as e:
-            print(f"❌ Error sending message: {e}")
+            print(f"❌ Error sending message: {e}", flush=True)
             import traceback
             traceback.print_exc()
             return {
