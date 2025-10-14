@@ -34,7 +34,8 @@ background_task = None
 
 
 async def monitor_session_timeouts():
-    """Background task that monitors sessions and processes them if idle for 5+ seconds."""
+    """Background task that monitors sessions and processes them if idle for 5+ seconds.
+    Processes any recording session after 5s of inactivity, regardless of segment count."""
     print("🕐 Timeout monitor started", flush=True)
     
     while True:
@@ -53,78 +54,73 @@ async def monitor_session_timeouts():
                 
                 if idle_time and idle_time > 5:
                     segments_count = session.get("segments_count", 0)
+                    accumulated = session.get("accumulated_text", "")
                     
-                    # Only process if we have minimum content
-                    if segments_count >= 2:
-                        print(f"⏰ TIMEOUT MONITOR: Processing session {session_id} after {idle_time:.1f}s idle", flush=True)
+                    print(f"⏰ TIMEOUT MONITOR: Processing session {session_id} after {idle_time:.1f}s idle ({segments_count} segment(s))", flush=True)
+                    
+                    # Get user
+                    uid = session.get("uid")
+                    user = SimpleUserStorage.get_user(uid)
+                    
+                    if user:
+                        # Mark as processing
+                        SimpleSessionStorage.update_session(
+                            session_id,
+                            message_mode="processing"
+                        )
                         
-                        # Get user
-                        uid = session.get("uid")
-                        user = SimpleUserStorage.get_user(uid)
-                        
-                        if user:
-                            # Mark as processing
-                            SimpleSessionStorage.update_session(
-                                session_id,
-                                message_mode="processing"
+                        # Process the message
+                        try:
+                            # Fetch fresh channels
+                            channels = slack_client.list_channels(user["access_token"])
+                            
+                            if channels:
+                                SimpleUserStorage.save_user(
+                                    uid=user["uid"],
+                                    access_token=user["access_token"],
+                                    team_id=user.get("team_id"),
+                                    team_name=user.get("team_name"),
+                                    selected_channel=user.get("selected_channel"),
+                                    available_channels=channels
+                                )
+                            
+                            # AI extracts channel and message
+                            channel_id, channel_name, message = await message_detector.ai_extract_message_and_channel(
+                                accumulated,
+                                channels
                             )
                             
-                            accumulated = session.get("accumulated_text", "")
+                            # If no channel, use default
+                            if not channel_id:
+                                channel_id = user.get("selected_channel")
+                                if channel_id:
+                                    for ch in channels:
+                                        if ch["id"] == channel_id:
+                                            channel_name = ch["name"]
+                                            break
                             
-                            # Process the message
-                            try:
-                                # Fetch fresh channels
-                                channels = slack_client.list_channels(user["access_token"])
+                            if channel_id and message and len(message.strip()) >= 3:
+                                print(f"⏰ Sending timeout message to #{channel_name}", flush=True)
                                 
-                                if channels:
-                                    SimpleUserStorage.save_user(
-                                        uid=user["uid"],
-                                        access_token=user["access_token"],
-                                        team_id=user.get("team_id"),
-                                        team_name=user.get("team_name"),
-                                        selected_channel=user.get("selected_channel"),
-                                        available_channels=channels
-                                    )
-                                
-                                # AI extracts channel and message
-                                channel_id, channel_name, message = await message_detector.ai_extract_message_and_channel(
-                                    accumulated,
-                                    channels
+                                result = await slack_client.send_message(
+                                    access_token=user["access_token"],
+                                    channel_id=channel_id,
+                                    text=message
                                 )
                                 
-                                # If no channel, use default
-                                if not channel_id:
-                                    channel_id = user.get("selected_channel")
-                                    if channel_id:
-                                        for ch in channels:
-                                            if ch["id"] == channel_id:
-                                                channel_name = ch["name"]
-                                                break
-                                
-                                if channel_id and message and len(message.strip()) >= 3:
-                                    print(f"⏰ Sending timeout message to #{channel_name}", flush=True)
-                                    
-                                    result = await slack_client.send_message(
-                                        access_token=user["access_token"],
-                                        channel_id=channel_id,
-                                        text=message
-                                    )
-                                    
-                                    if result and result.get("success"):
-                                        print(f"⏰ SUCCESS! Timeout message sent to #{channel_name}", flush=True)
-                                    else:
-                                        print(f"⏰ FAILED: {result.get('error') if result else 'Unknown'}", flush=True)
-                                
-                                # Reset session
-                                SimpleSessionStorage.reset_session(session_id)
-                                
-                            except Exception as e:
-                                print(f"⏰ Error processing timeout: {e}", flush=True)
-                                SimpleSessionStorage.reset_session(session_id)
-                    else:
-                        # Not enough content, just reset
-                        print(f"⏰ Timeout with insufficient content ({segments_count} segments), resetting", flush=True)
-                        SimpleSessionStorage.reset_session(session_id)
+                                if result and result.get("success"):
+                                    print(f"⏰ SUCCESS! Timeout message sent to #{channel_name}", flush=True)
+                                else:
+                                    print(f"⏰ FAILED: {result.get('error') if result else 'Unknown'}", flush=True)
+                            else:
+                                print(f"⏰ Insufficient content to send (message: '{message[:50] if message else 'None'}...')", flush=True)
+                            
+                            # Reset session
+                            SimpleSessionStorage.reset_session(session_id)
+                            
+                        except Exception as e:
+                            print(f"⏰ Error processing timeout: {e}", flush=True)
+                            SimpleSessionStorage.reset_session(session_id)
         
         except Exception as e:
             print(f"❌ Timeout monitor error: {e}", flush=True)
@@ -732,9 +728,10 @@ async def process_segments(
 ) -> str:
     """
     Collect up to 5 segments after trigger, or timeout after 5s gap.
-    - Segment 1: Contains trigger + start of message
-    - Segments 2-5: Continued message content (max)
+    - Segment 1+: Contains trigger + message content
+    - Maximum: 5 segments (processes immediately)
     - Timeout: If 5+ seconds gap after any segment, process what we have
+    - No minimum segments required - even 1 segment is processed on timeout
     - AI extracts channel and message content
     
     For test interface: processes the entire text immediately.
