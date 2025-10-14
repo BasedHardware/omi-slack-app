@@ -1,0 +1,23 @@
+📁 Using local storage at: /Users/aaravgarg/omi-ai/Code/apps/slack
+/Users/aaravgarg/omi-ai/Code/apps/slack/main.py:130: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/Users/aaravgarg/omi-ai/Code/apps/slack/main.py:138: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Will watch for changes in these directories: ['/Users/aaravgarg/omi-ai/Code/apps/slack']
+ERROR:    [Errno 48] Address already in use
+✅ Loaded 1 users from storage
+💬 OMI Slack Messages Integration
+==================================================
+✅ Using file-based storage
+🚀 Starting on 0.0.0.0:8000
+==================================================

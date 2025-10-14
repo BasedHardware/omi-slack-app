@@ -1,0 +1,2254 @@
+📁 Using local storage at: /Users/aaravgarg/omi-ai/Code/apps/slack
+/Users/aaravgarg/omi-ai/Code/apps/slack/main.py:130: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("startup")
+/Users/aaravgarg/omi-ai/Code/apps/slack/main.py:138: DeprecationWarning: 
+        on_event is deprecated, use lifespan event handlers instead.
+
+        Read more about it in the
+        [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+        
+  @app.on_event("shutdown")
+INFO:     Will watch for changes in these directories: ['/Users/aaravgarg/omi-ai/Code/apps/slack']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [5190] using StatReload
+✅ Loaded 1 users from storage
+💬 OMI Slack Messages Integration
+==================================================
+✅ Using file-based storage
+🚀 Starting on 0.0.0.0:8000
+==================================================
+📁 Using local storage at: /Users/aaravgarg/omi-ai/Code/apps/slack
+INFO:     Started server process [5193]
+INFO:     Waiting for application startup.
+✅ Loaded 1 users from storage
+✅ Background timeout monitor started
+🕐 Timeout monitor started
+INFO:     Application startup complete.
+WARNING:  StatReload detected changes in 'slack_client.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+🛑 Background timeout monitor stopped
+INFO:     Application shutdown complete.
+INFO:     Finished server process [5193]
+📁 Using local storage at: /Users/aaravgarg/omi-ai/Code/apps/slack
+INFO:     Started server process [5282]
+INFO:     Waiting for application startup.
+✅ Loaded 1 users from storage
+✅ Background timeout monitor started
+🕐 Timeout monitor started
+INFO:     Application startup complete.
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah, bitte.
+🆕 Created new session: omi_session_GPW9BKkHYWMkGTv3iSndMRAPS2B2
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah, bitte.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: On, you know, on his
+📊 Session state: mode=idle, count=0
+🔍 Received: 'On, you know, on his'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: clone. Right?
+   Segment 1: He told at all public events.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'clone. Right? He told at all public events.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: For 1 year. Yeah.
+   Segment 1: That's pretty good.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'For 1 year. Yeah. That's pretty good.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Because he's meeting like extremely extremely good people.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Because he's meeting like extremely extremely good people.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Third 1 is crazy equity.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Third 1 is crazy equity.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I just want to get it done now. Doesn't matter. It would do, like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I just want to get it done now. Doesn't matter. It would do, like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: hour later. It's like, when I was gonna mark. Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'hour later. It's like, when I was gonna mark. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Even but even for stuff he's doing.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Even but even for stuff he's doing.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: True.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'True.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: America would pay
+📊 Session state: mode=idle, count=0
+🔍 Received: 'America would pay'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: pay the person like him.
+   Segment 1: Mhmm.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'pay the person like him. Mhmm.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Means it's exactly It's so true.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Means it's exactly It's so true.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. Right there?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Right there?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 5 segment(s) from OMI
+   Segment 0: Oh. 0, so he was what was he doing?
+   Segment 1: Was he They were doing like personally, I
+   Segment 2: Or Oh, they were building a startup.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh. 0, so he was what was he doing? Was he They were doing like personally, I Or Oh, they were building a startup. Shit on me. He was'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yeah.
+   Segment 1: Makes sense. India Point makes sense.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Makes sense. India Point makes sense.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Support
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Support'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: in building India based team operations and
+📊 Session state: mode=idle, count=0
+🔍 Received: 'in building India based team operations and'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: dedicated promotion across all my channels,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'dedicated promotion across all my channels,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. I think 25 percent equity hit
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. I think 25 percent equity hit'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: doesn't deserve yet.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'doesn't deserve yet.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: At least right now.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'At least right now.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: We could maybe, like, trial, like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'We could maybe, like, trial, like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: option second Uh-huh.
+   Segment 1: Offer With cache? Okay.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'option second Uh-huh. Offer With cache? Okay.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No cash. Right?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No cash. Right?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: 5 percent?
+📊 Session state: mode=idle, count=0
+🔍 Received: '5 percent?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: 5 percent equity, no
+📊 Session state: mode=idle, count=0
+🔍 Received: '5 percent equity, no'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: cash. I'm curious how will vesting work in this? How does vesting work in advisory?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'cash. I'm curious how will vesting work in this? How does vesting work in advisory?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: In advisory?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'In advisory?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. But what is it based on?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. But what is it based on?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: What is
+   Segment 1: 2 years? Months, just like every month,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What is 2 years? Months, just like every month,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: example in normal vesting, if a person leaves at
+📊 Session state: mode=idle, count=0
+🔍 Received: 'example in normal vesting, if a person leaves at'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: the vesting ends. Yes. How does it matter for it? Like, top advising.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'the vesting ends. Yes. How does it matter for it? Like, top advising.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Oh. We can also stop at home.
+   Segment 1: Okay. So if they
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh. We can also stop at home. Okay. So if they'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: don't they don't stop they stop promoting it then.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'don't they don't stop they stop promoting it then.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Oh, I'm sure.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh, I'm sure.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Do you think you'll set if we do, let's say,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Do you think you'll set if we do, let's say,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: 5 percent equity in all cash?
+📊 Session state: mode=idle, count=0
+🔍 Received: '5 percent equity in all cash?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: For second or third?
+   Segment 1: Second.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'For second or third? Second.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Might.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Might.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I don't hear really. Like, not a big, like she might.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I don't hear really. Like, not a big, like she might.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Because for young Jack,
+   Segment 1: that much food.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Because for young Jack, that much food.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: And, also, we don't pass much.
+   Segment 1: Yeah.
+   Segment 2: We're gonna need someone.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And, also, we don't pass much. Yeah. We're gonna need someone. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But like But he'll be like, he'll release.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But like But he'll be like, he'll release.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: You think?
+   Segment 1: Of course, bro.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You think? Of course, bro.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: He has he has
+📊 Session state: mode=idle, count=0
+🔍 Received: 'He has he has'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: drive the huge tuna sale already. We have proven. But not a huge slice.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'drive the huge tuna sale already. We have proven. But not a huge slice.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Not like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Not like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: From 1 video. For us, it's huge. Yeah. In second thing, he submitted 5 videos per month.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'From 1 video. For us, it's huge. Yeah. In second thing, he submitted 5 videos per month.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Why?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Why?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Bro, scanning in events throughout the year is massive.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Bro, scanning in events throughout the year is massive.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Bro, he probably gives a talk every week.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Bro, he probably gives a talk every week.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: And he's meeting like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And he's meeting like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: there's also like if he's wearing actually in each event I don't know how to track
+📊 Session state: mode=idle, count=0
+🔍 Received: 'there's also like if he's wearing actually in each event I don't know how to track'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: that he's wearing it, but if he actually does it, the kind of people he's meeting, it'll also
+📊 Session state: mode=idle, count=0
+🔍 Received: 'that he's wearing it, but if he actually does it, the kind of people he's meeting, it'll also'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: The thing with small in that and will be like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'The thing with small in that and will be like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: in 5, at least it feels like he might might not.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'in 5, at least it feels like he might might not.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: First you know it's like less probable to take
+📊 Session state: mode=idle, count=0
+🔍 Received: 'First you know it's like less probable to take'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: seconds, still, like, probably, I'm thinking. What do think?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'seconds, still, like, probably, I'm thinking. What do think?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But you're gonna do for cash.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But you're gonna do for cash.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: A no cash
+📊 Session state: mode=idle, count=0
+🔍 Received: 'A no cash'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It's a smaller release. So in our quarterly.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's a smaller release. So in our quarterly.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: He knows? 2 40000000 dollars.
+   Segment 1: In the second
+   Segment 2: 1?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'He knows? 2 40000000 dollars. In the second 1? In the first 1?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: No.
+   Segment 1: No. No.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No. No. No.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: A new valuation.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'A new valuation.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Sorry about that. It's 1 it's evaluation. Not old.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Sorry about that. It's 1 it's evaluation. Not old.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Includes everything. New files consist from usability
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Includes everything. New files consist from usability'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: across all part.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'across all part.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Oh. 0, that is also cool.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh. 0, that is also cool.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: What sir? Like, where is it in every podcast?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What sir? Like, where is it in every podcast?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Right.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Right.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yo, bro. Can you hear me?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yo, bro. Can you hear me?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yo, yo. Thank you so much. You're actually watching so much.
+   Segment 1: It's crazy. Like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yo, yo. Thank you so much. You're actually watching so much. It's crazy. Like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: having million more forever. It's insane how efficient you are.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'having million more forever. It's insane how efficient you are.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Anyways, bro, thank you so much for saving the options.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Anyways, bro, thank you so much for saving the options.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Like, I fucking want to get the deal with you.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Like, I fucking want to get the deal with you.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: What do you think we start with just, like, the smallest option? Just, like, at least we start
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What do you think we start with just, like, the smallest option? Just, like, at least we start'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: with something, like, as if as soon as possible, just, like, today.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'with something, like, as if as soon as possible, just, like, today.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: And then we we basically move eventually to bigger deals.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And then we we basically move eventually to bigger deals.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: And I think we can you know, we'll be able to move very quickly. Maybe, like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And I think we can you know, we'll be able to move very quickly. Maybe, like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: like, in a 1 week later, maybe 2 weeks later. Just, you know, we will see that it kinda, like, works
+📊 Session state: mode=idle, count=0
+🔍 Received: 'like, in a 1 week later, maybe 2 weeks later. Just, you know, we will see that it kinda, like, works out.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So for I'm I'm happy to start with the first option.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So for I'm I'm happy to start with the first option.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: However, because we are increasing equity
+📊 Session state: mode=idle, count=0
+🔍 Received: 'However, because we are increasing equity'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: a little bit and, like, all all that stuff,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'a little bit and, like, all all that stuff,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I would really, really appreciate if we could move on the cash. So, basically, stick to
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I would really, really appreciate if we could move on the cash. So, basically, stick to'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: equity only.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'equity only.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: And besides that, I'm happy with everything you wrote.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And besides that, I'm happy with everything you wrote.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: On the first deal, just like basically equity
+📊 Session state: mode=idle, count=0
+🔍 Received: 'On the first deal, just like basically equity'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I'm happy to get the cash equivalent, like I'm
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I'm happy to get the cash equivalent, like I'm'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: like, maybe equity.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'like, maybe equity.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: All
+📊 Session state: mode=idle, count=0
+🔍 Received: 'All'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Right. But 40000 doors is not a little cash.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Right. But 40000 doors is not a little cash.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Bro. For just like 1 video where you appear in your your
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Bro. For just like 1 video where you appear in your your'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: clone appears in the video is like not small kinda.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'clone appears in the video is like not small kinda.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It for understood it will be just your clone will be appearing in that. Yeah. I'm reading. So
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It for understood it will be just your clone will be appearing in that. Yeah. I'm reading. So'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 3 segment(s) from OMI
+   Segment 0: did did you hear
+   Segment 1: Bill?
+   Segment 2: Yeah. So it's a clone. So you're not making new videos. It's just like your clone
+📊 Session state: mode=idle, count=0
+🔍 Received: 'did did you hear Bill? Yeah. So it's a clone. So you're not making new videos. It's just like your clone'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: will be will appear in 1 of the videos.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'will be will appear in 1 of the videos.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: With device.
+   Segment 1: Correct? Basically.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'With device. Correct? Basically.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: So Yeah. Yeah.
+   Segment 1: Yeah. Yeah. Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So Yeah. Yeah. Yeah. Yeah. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I see.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I see.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Can we do it 2 years?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Can we do it 2 years?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yeah.
+   Segment 1: Yeah. I'm just saying there is basically 24 deliverables. It's
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Yeah. I'm just saying there is basically 24 deliverables. It's'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: not like 12 deliverables. That's what I
+📊 Session state: mode=idle, count=0
+🔍 Received: 'not like 12 deliverables. That's what I'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: am
+📊 Session state: mode=idle, count=0
+🔍 Received: 'am'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: to be sort of, like, transparent, firstly, I fucking love you. Want a deal. Second, to be
+📊 Session state: mode=idle, count=0
+🔍 Received: 'to be sort of, like, transparent, firstly, I fucking love you. Want a deal. Second, to be'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: very transparent, the deal that I was sending you and everything I was expecting
+📊 Session state: mode=idle, count=0
+🔍 Received: 'very transparent, the deal that I was sending you and everything I was expecting'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: 2 years. It's like this thing that we signed with every other adviser. We signed 3. And everyone had
+   Segment 1: Like,
+📊 Session state: mode=idle, count=0
+🔍 Received: '2 years. It's like this thing that we signed with every other adviser. We signed 3. And everyone had 2, so 2 years. So that's why I was I was expecting Like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: it's just, like, too hardcore. So I really really am asking for, you know,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'it's just, like, too hardcore. So I really really am asking for, you know,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: just kinda like consider it to me and either give me
+📊 Session state: mode=idle, count=0
+🔍 Received: 'just kinda like consider it to me and either give me'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: let's say, okay, equity 2 percent, 20000 in
+📊 Session state: mode=idle, count=0
+🔍 Received: 'let's say, okay, equity 2 percent, 20000 in'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: cash, or 2 years, bro. So 24 months. I need 2
+📊 Session state: mode=idle, count=0
+🔍 Received: 'cash, or 2 years, bro. So 24 months. I need 2'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2e00:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Let me get back, like, by tomorrow. Yeah. Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Let me get back, like, by tomorrow. Yeah. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yeah. Alright. Thank you, bro.
+   Segment 1: Bye bye bye.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Alright. Thank you, bro. Bye bye bye.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No, bro. He's a fuck. What the fuck? 200 k. Arts to do this.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No, bro. He's a fuck. What the fuck? 200 k. Arts to do this.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Like, if we rewarded him where specifically? From events?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Like, if we rewarded him where specifically? From events?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So, porask wearing in porask
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So, porask wearing in porask'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: And public events.
+   Segment 1: But how many podcasts you go like don't you go to actually as many
+📊 Session state: mode=idle, count=0
+🔍 Received: 'And public events. But how many podcasts you go like don't you go to actually as many'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It is his own podcast. He hosts him.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It is his own podcast. He hosts him.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So this Like Goes to all pods with that shit?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So this Like Goes to all pods with that shit?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: The second or no? Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'The second or no? Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Best end only will be cross all podcast. You can lock in like each other. Like, know this guy
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Best end only will be cross all podcast. You can lock in like each other. Like, know this guy'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: the way. He's like refamous in India.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'the way. He's like refamous in India.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: This is also really famous guy in India.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'This is also really famous guy in India.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It's like 200 k views bro, it's literally 200 k people
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's like 200 k views bro, it's literally 200 k people'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: seeing Omi. Like all of them.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'seeing Omi. Like all of them.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Ok, the other videos are shit.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Ok, the other videos are shit.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Brother,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Brother,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: is when he posted it.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'is when he posted it.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Jan 13.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Jan 13.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Can this not be daily?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Can this not be daily?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: You can do biweek, I think.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You can do biweek, I think.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Okay.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Okay.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: A lot of sales.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'A lot of sales.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Wait. When did we launch?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Wait. When did we launch?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: January eighth.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'January eighth.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Okay. So that launch was Spike was here. So he got quite a lot of SalesPro.
+   Segment 1: Wow.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Okay. So that launch was Spike was here. So he got quite a lot of SalesPro. Wow.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: He got
+📊 Session state: mode=idle, count=0
+🔍 Received: 'He got'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. Prepare his first video viral because it was a quality video.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Prepare his first video viral because it was a quality video.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: You know. 40 k
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You know. 40 k'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: 7 k? No, no, no.
+   Segment 1: We can say it's like all from
+📊 Session state: mode=idle, count=0
+🔍 Received: '7 k? No, no, no. We can say it's like all from'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: you think? It's at least 50 k from here.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'you think? It's at least 50 k from here.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Within this time 6 k and then few add ons 50 k at least.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Within this time 6 k and then few add ons 50 k at least.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Which is
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Which is'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: yeah, let's let's watch this because that will be more relative I would say.
+   Segment 1: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'yeah, let's let's watch this because that will be more relative I would say. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: When was that 1?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'When was that 1?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It was here when I searched.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It was here when I searched.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Stuck.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Stuck.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: June 20 third.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'June 20 third.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: You sure? It was
+   Segment 1: June? Yeah. 06/23/2025. Wait.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You sure? It was June? Yeah. 06/23/2025. Wait.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Where is it, bro? What the fuck?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Where is it, bro? What the fuck?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: Guess this. What is this? Do you know what this is? No.
+   Segment 1: You I show it was June
+   Segment 2: 20 third?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Guess this. What is this? Do you know what this is? No. You I show it was June 20 third? Yeah. Yeah. But I just thought that Maybe maybe he reposted it somewhere.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: What? Maybe he posted it, like, somewhere else.
+   Segment 1: Oh,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What? Maybe he posted it, like, somewhere else. Oh,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: That's on my head.
+   Segment 1: It's actually
+📊 Session state: mode=idle, count=0
+🔍 Received: 'That's on my head. It's actually'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 3 segment(s) from OMI
+   Segment 0: capable of taking my thoughts right now. Okay. The crazy part
+   Segment 1: it costs less than
+   Segment 2: 5
+📊 Session state: mode=idle, count=0
+🔍 Received: 'capable of taking my thoughts right now. Okay. The crazy part it costs less than 5'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So this spike is his.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So this spike is his.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: I don't know.
+   Segment 1: What is the setting spike? What is it? Is it his or is it different?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I don't know. What is the setting spike? What is it? Is it his or is it different?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No. It's different 1.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No. It's different 1.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: We launch glasses,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'We launch glasses,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Oh, yes. Wait. No. August 20 fifth we launched, I think.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh, yes. Wait. No. August 20 fifth we launched, I think.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: You sure?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You sure?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Let me check.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Let me check.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No, bro. I think that's Glasses Spike. We had around 10 k when we launched Glasses.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No, bro. I think that's Glasses Spike. We had around 10 k when we launched Glasses.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Second tricking.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Second tricking.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Cash is pretty Those other devices will not yes.
+   Segment 1: We'll even
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Cash is pretty Those other devices will not yes. We'll even'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 3 segment(s) from OMI
+   Segment 0: कि यह.
+   Segment 1: No no, एक
+   Segment 2: रेल.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'कि यह. No no, एक रेल.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No. In the second 1.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No. In the second 1.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: It's per month featuring me for me.
+   Segment 1: Yeah, you see.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's per month featuring me for me. Yeah, you see.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Next question.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Next question.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But you wanted.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But you wanted.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: You should not work out.
+   Segment 1: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You should not work out. Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: With no cap.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'With no cap.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yeah. This is glasses spike. This is glass. Yes. So he got
+   Segment 1: guys. Yeah. 5 k. And views were
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. This is glasses spike. This is glass. Yes. So he got guys. Yeah. 5 k. And views were'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: With no cash.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'With no cash.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. So same conversion.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. So same conversion.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: He doesn't know.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'He doesn't know.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: So it's not not valuable for us?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'So it's not not valuable for us?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: If it is just cash, then yes, it is.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'If it is just cash, then yes, it is.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. Like, who's that conceiving?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Like, who's that conceiving?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Second question. It's a lot. First question? Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Second question. It's a lot. First question? Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It'll be like need, but he won't know that we need.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It'll be like need, but he won't know that we need.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Much.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Much.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Okay.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Okay.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. But he sounded like he's not pushable.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. But he sounded like he's not pushable.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Yeah. He does sound like that. I know.
+   Segment 1: Like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. He does sound like that. I know. Like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I mean, to be like, that will not be critical.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I mean, to be like, that will not be critical.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Because if you're, like, we're on the podcast as well, they will definitely be profitable.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Because if you're, like, we're on the podcast as well, they will definitely be profitable.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But still, like, you can try pushing, I'm saying. But regardless to do now.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But still, like, you can try pushing, I'm saying. But regardless to do now.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Let's say, bro, I wanna make a deal with you.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Let's say, bro, I wanna make a deal with you.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Give me time to
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Give me time to'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 3 segment(s) from OMI
+   Segment 0: I mean, yeah.
+   Segment 1: Yeah. No. You asked if it is just cash.
+   Segment 2: I mean, even yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I mean, yeah. Yeah. No. You asked if it is just cash. I mean, even yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It's just even actually, it's problem.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's just even actually, it's problem.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d01::2d01:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: October.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'October.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: 20.
+📊 Session state: mode=idle, count=0
+🔍 Received: '20.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Something?
+   Segment 1: October 20?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Something? October 20?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: How about spike again?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'How about spike again?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: To give emotion to sing? I think how to give motivate
+📊 Session state: mode=idle, count=0
+🔍 Received: 'To give emotion to sing? I think how to give motivate'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: How to give motivation?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'How to give motivation?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: That we will do.
+   Segment 1: 3 5 percent.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'That we will do. 3 5 percent.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: But it's quite a lot of effort. I definitely don't think he automated the video. I I think he or may
+📊 Session state: mode=idle, count=0
+🔍 Received: 'But it's quite a lot of effort. I definitely don't think he automated the video. I I think he or maybe his team actually did it.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: Which
+   Segment 1: 1?
+   Segment 2: No. That's automated.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Which 1? No. That's automated. That's his clone. Automated? I don't know. Automated clone.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It's sheath's off. It's still it's
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's sheath's off. It's still it's'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: quite like Second
+   Segment 1: 1 is clone.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'quite like Second 1 is clone.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Robot, that's great.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Robot, that's great.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Fight sales from
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Fight sales from'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: like, what?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'like, what?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Crazy. If he launches his own product, he can make so much money if the product is good.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Crazy. If he launches his own product, he can make so much money if the product is good.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It become creators, bro.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It become creators, bro.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: What happened?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What happened?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Engines, just so hard to deal with your guys.
+   Segment 1: Why?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Engines, just so hard to deal with your guys. Why?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Don't Bro, he's not the average Indian. He's
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Don't Bro, he's not the average Indian. He's'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Average Indian is so easy to like push. He's like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Average Indian is so easy to like push. He's like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: room regimen? Yeah, bro. That'll lure him for sure.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'room regimen? Yeah, bro. That'll lure him for sure.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Is there some Russian supermodel? Have you, bro, have you seen
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Is there some Russian supermodel? Have you, bro, have you seen'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: my
+📊 Session state: mode=idle, count=0
+🔍 Received: 'my'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Picture where you Female type? My female version or no?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Picture where you Female type? My female version or no?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: What?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Let me find it.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Let me find it.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Bro, I'll be like a super fucking woman, bro. It's crazy.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Bro, I'll be like a super fucking woman, bro. It's crazy.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: What do you mean by that?
+   Segment 1: 1 second.
+   Segment 2: Me first define When you were a kid, did you have
+📊 Session state: mode=idle, count=0
+🔍 Received: 'What do you mean by that? 1 second. Me first define When you were a kid, did you have Yeah. That's crazy.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I'm gonna
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I'm gonna'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: try to sign India guy by tomorrow.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'try to sign India guy by tomorrow.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Which India guy bro? Distributor and reseller.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Which India guy bro? Distributor and reseller.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Shipping partner.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Shipping partner.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: हां that's why yeah my question to you is what
+📊 Session state: mode=idle, count=0
+🔍 Received: 'हां that's why yeah my question to you is what'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: 's the offer that you think we should give to shipping partners?
+📊 Session state: mode=idle, count=0
+🔍 Received: ''s the offer that you think we should give to shipping partners?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: To add to these ones? Can you send the announcement please to
+📊 Session state: mode=idle, count=0
+🔍 Received: 'To add to these ones? Can you send the announcement please to'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: of these 20 people right now?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'of these 20 people right now?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No. They're all distributor type partnerships. They're
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No. They're all distributor type partnerships. They're'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: like different world. I already send them details. It doesn't make sense.
+   Segment 1: Just like just
+📊 Session state: mode=idle, count=0
+🔍 Received: 'like different world. I already send them details. It doesn't make sense. Just like just'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Just send them.
+   Segment 1: Bro, I already send them lot of details.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Just send them. Bro, I already send them lot of details.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It it is irrelevant. I'm just pushing.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It it is irrelevant. I'm just pushing.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No just show that like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No just show that like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: you just send me like a Twitter announcement just saying like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'you just send me like a Twitter announcement just saying like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: by the way,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'by the way,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: we are, like, actually doing it. Yeah. Cool. Like, right now.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'we are, like, actually doing it. Yeah. Cool. Like, right now.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: The tweet?
+   Segment 1: Yeah. Tweet or
+📊 Session state: mode=idle, count=0
+🔍 Received: 'The tweet? Yeah. Tweet or'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. Tweet. Tweet. But I've been telling them we have a proper formal
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. Tweet. Tweet. But I've been telling them we have a proper formal'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: distributor program already, bro.
+   Segment 1: Like Yeah. But, like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'distributor program already, bro. Like Yeah. But, like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Okay I'll send
+   Segment 1: I'll send bro. Like right now.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Okay I'll send I'll send bro. Like right now.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I'll I'll reward you with that. I think
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I'll I'll reward you with that. I think'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: You can either send or you can add them yourself.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'You can either send or you can add them yourself.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It's your decision.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It's your decision.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Royally liked your repost.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Royally liked your repost.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: This is so funny, bro.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'This is so funny, bro.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I don't I have literally no idea why this died. This is such a funny video.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I don't I have literally no idea why this died. This is such a funny video.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: It didn't die. It didn't die. Okay. It was
+📊 Session state: mode=idle, count=0
+🔍 Received: 'It didn't die. It didn't die. Okay. It was'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: raw material. I think it kind of died.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'raw material. I think it kind of died.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Pro. Loop Pro.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Pro. Loop Pro.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: These are all distributor threads.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'These are all distributor threads.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Basically.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Basically.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Motherfuckers don't reply
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Motherfuckers don't reply'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Wait, what? How what does it mean? What do you mean? It's like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Wait, what? How what does it mean? What do you mean? It's like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 4 segment(s) from OMI
+   Segment 0: AI or what? Yeah.
+   Segment 1: It's AI.
+   Segment 2: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'AI or what? Yeah. It's AI. Yeah. Yeah. Bro, that's crazy. That'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: why Indian men like Russian women.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'why Indian men like Russian women.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Sense, bro.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Sense, bro.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Makes fucking sense. Yeah, was asking bro, you didn't tell
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Makes fucking sense. Yeah, was asking bro, you didn't tell'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: didn't ask me my question. Which 1?
+   Segment 1: What should, what, how much should we offer to like
+📊 Session state: mode=idle, count=0
+🔍 Received: 'didn't ask me my question. Which 1? What should, what, how much should we offer to like'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: how much do you think? 90 percent.
+   Segment 1: No, bro. A shipping partner fees
+📊 Session state: mode=idle, count=0
+🔍 Received: 'how much do you think? 90 percent. No, bro. A shipping partner fees'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Like, what will be the fulfillment fees that we give them? We'll figure it out.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Like, what will be the fulfillment fees that we give them? We'll figure it out.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Later. Right now,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Later. Right now,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: like, will buy our devices with 50 percent deposit, we'll figure out later.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'like, will buy our devices with 50 percent deposit, we'll figure out later.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Depending on how many will be interested.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Depending on how many will be interested.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No broad
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No broad'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: not this I'm just talking like like, let's say right now,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'not this I'm just talking like like, let's say right now,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I wanna sign somebody for shipping from. How should we pay them?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I wanna sign somebody for shipping from. How should we pay them?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Like, 8 dollars. You should check, like, what is the average and, like,
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Like, 8 dollars. You should check, like, what is the average and, like,'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Just cover shipping costs.
+   Segment 1: Yeah. Or you should yeah. You should do, like, cover
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Just cover shipping costs. Yeah. Or you should yeah. You should do, like, cover'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: shipping cost plus 20 percent, for example.
+   Segment 1: Or no.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'shipping cost plus 20 percent, for example. Or no.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: Think average is 0.2 dollars per shipment or something.
+   Segment 1: Where?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Think average is 0.2 dollars per shipment or something. Where?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Shibob charges, like, 0.2 dollars 20 cents.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Shibob charges, like, 0.2 dollars 20 cents.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 2 segment(s) from OMI
+   Segment 0: For each packed unit or something.
+   Segment 1: They charge
+📊 Session state: mode=idle, count=0
+🔍 Received: 'For each packed unit or something. They charge'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: in total, they charge along with the Yeah yeah, but like the Picking cost?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'in total, they charge along with the Yeah yeah, but like the Picking cost?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yes like 1 100 a dollar.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yes like 1 100 a dollar.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Shopify or Shibob?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Shopify or Shibob?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Is nothing for like to do network or something?
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Is nothing for like to do network or something?'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: No.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'No.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Okay. Type fulfillment network.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Okay. Type fulfillment network.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Network. Oh, this
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Network. Oh, this'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I don't I don't actually understand if someone enabled this app or
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I don't I don't actually understand if someone enabled this app or'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: or it's default. Anyways, you know, I think it may be
+📊 Session state: mode=idle, count=0
+🔍 Received: 'or it's default. Anyways, you know, I think it may be'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Oh, okay. So yeah. My second
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh, okay. So yeah. My second'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah. So but yeah. Yeah. So I think you should go for it to door and blink.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah. So but yeah. Yeah. So I think you should go for it to door and blink.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Box.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Box.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I see. I mean, we can start with 0 per box.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I see. I mean, we can start with 0 per box.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Plus
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Plus'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: paying for the shipping price.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'paying for the shipping price.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: That's, like, what we should aim for.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'That's, like, what we should aim for.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d08::1800:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Oh, wow.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Oh, wow.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Yeah.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Yeah.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3700:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: I
+📊 Session state: mode=idle, count=0
+🔍 Received: 'I'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3700:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Green.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Green.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::2000:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: just pulled there bro. Like, it's a part of our hall of fame now.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'just pulled there bro. Like, it's a part of our hall of fame now.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3700:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Wow.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Wow.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3700:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Brew.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Brew.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3700:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Hello. Test check.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Hello. Test check.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3100:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK
+📥 Received 1 segment(s) from OMI
+   Segment 0: Let's check.
+📊 Session state: mode=idle, count=0
+🔍 Received: 'Let's check.'
+📊 Session mode: idle, Count: 0/5
+🔇 Silent response: listening
+INFO:     2600:1900:0:2d07::3100:0 - "POST /webhook?uid=GPW9BKkHYWMkGTv3iSndMRAPS2B2 HTTP/1.1" 200 OK

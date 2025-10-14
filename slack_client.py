@@ -51,6 +51,8 @@ class SlackClient:
             if response.status_code == 200:
                 data = response.json()
                 if data.get("ok"):
+                    print(f"🔍 OAuth Response Keys: {list(data.keys())}", flush=True)
+                    
                     # Use the USER token (authed_user) instead of bot token
                     authed_user = data.get("authed_user", {})
                     user_token = authed_user.get("access_token")
@@ -58,15 +60,19 @@ class SlackClient:
                     if not user_token:
                         # Fallback to bot token if user token not available
                         user_token = data.get("access_token")
-                        print("⚠️ Using bot token (user token not available)", flush=True)
+                        print("⚠️  WARNING: Using BOT token (user token not available)", flush=True)
+                        print(f"⚠️  This means messages will post as BOT, not as USER", flush=True)
+                        print(f"⚠️  Check Slack app settings - ensure User Token Scopes are set", flush=True)
                     else:
-                        print("✅ Using user token (messages will appear as user)", flush=True)
+                        print("✅ Using USER token (messages will appear as user)", flush=True)
+                        print(f"✅ User token starts with: {user_token[:15]}...", flush=True)
                     
                     return {
                         "access_token": user_token,
                         "team_id": data.get("team", {}).get("id"),
                         "team_name": data.get("team", {}).get("name"),
-                        "scope": data.get("scope")
+                        "scope": data.get("scope"),
+                        "token_type": "user" if user_token == authed_user.get("access_token") else "bot"
                     }
                 else:
                     raise Exception(f"Slack OAuth error: {data.get('error')}")
@@ -120,23 +126,42 @@ class SlackClient:
     ) -> Optional[dict]:
         """
         Send a message to a Slack channel as the authenticated user.
+        With user tokens, messages automatically post as the user.
         Returns message data if successful.
         """
         client = WebClient(token=access_token)
         
+        # Debug: Check token type
+        token_prefix = access_token[:15] if access_token else "None"
+        token_type = "USER" if access_token and access_token.startswith("xoxp-") else "BOT" if access_token and access_token.startswith("xoxb-") else "UNKNOWN"
+        print(f"🔑 Sending with {token_type} token: {token_prefix}...", flush=True)
+        
         try:
+            # Note: as_user parameter is deprecated and not needed with user tokens
+            # User tokens automatically post messages as the authenticated user
             result = client.chat_postMessage(
                 channel=channel_id,
-                text=text,
-                as_user=True  # Ensure message is posted as the user, not as a bot
+                text=text
             )
             
             if result.get("ok"):
+                # Check if message was posted by bot or user
+                message_data = result.get("message", {})
+                subtype = message_data.get("subtype")
+                bot_id = message_data.get("bot_id")
+                username = message_data.get("username", "N/A")
+                
+                if bot_id:
+                    print(f"⚠️  Message posted as BOT (bot_id: {bot_id})", flush=True)
+                else:
+                    print(f"✅ Message posted as USER", flush=True)
+                
                 return {
                     "success": True,
                     "ts": result.get("ts"),
                     "channel": result.get("channel"),
-                    "text": text
+                    "text": text,
+                    "posted_as": "bot" if bot_id else "user"
                 }
             else:
                 return {
