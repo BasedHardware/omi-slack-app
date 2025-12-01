@@ -184,4 +184,97 @@ class SlackClient:
                 "success": False,
                 "error": str(e)
             }
+    
+    async def search_messages(
+        self,
+        access_token: str,
+        query: str,
+        channel: Optional[str] = None
+    ) -> Optional[dict]:
+        """
+        Search for messages in Slack.
+        Returns list of matching messages.
+        """
+        client = WebClient(token=access_token)
+        
+        try:
+            # Build search query
+            search_query = query
+            if channel:
+                # If channel is provided, search within that channel
+                # First, try to find channel ID if channel name was provided
+                if not channel.startswith('C') and not channel.startswith('G'):
+                    # It's a channel name, need to find the ID
+                    channels = self.list_channels(access_token)
+                    channel_id = None
+                    for ch in channels:
+                        if ch["name"].lower() == channel.lower().lstrip('#'):
+                            channel_id = ch["id"]
+                            break
+                    if channel_id:
+                        search_query = f"in:{channel_id} {query}"
+                else:
+                    search_query = f"in:{channel} {query}"
+            
+            result = client.search_messages(query=search_query)
+            
+            if result.get("ok"):
+                matches = result.get("messages", {}).get("matches", [])
+                return {
+                    "success": True,
+                    "matches": matches,
+                    "total": len(matches)
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": result.get("error", "Unknown error")
+                }
+                
+        except SlackApiError as e:
+            error_msg = e.response.get('error', str(e))
+            print(f"❌ Slack API error searching messages: {error_msg}", flush=True)
+            return {
+                "success": False,
+                "error": error_msg
+            }
+        except Exception as e:
+            print(f"❌ Error searching messages: {e}", flush=True)
+            import traceback
+            traceback.print_exc()
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
+    def search_channels(
+        self,
+        access_token: str,
+        query: str
+    ) -> List[Dict]:
+        """
+        Search for channels matching the query string.
+        Returns list of matching channels.
+        """
+        client = WebClient(token=access_token)
+        matching_channels = []
+        
+        try:
+            # Get all channels
+            all_channels = self.list_channels(access_token)
+            
+            # Filter channels by query (case-insensitive)
+            query_lower = query.lower().lstrip('#')
+            for channel in all_channels:
+                channel_name = channel.get("name", "").lower()
+                if query_lower in channel_name:
+                    matching_channels.append(channel)
+            
+            return matching_channels
+            
+        except Exception as e:
+            print(f"❌ Error searching channels: {e}", flush=True)
+            import traceback
+            traceback.print_exc()
+            return []
 

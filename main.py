@@ -1156,6 +1156,279 @@ async def health_check():
     return {"status": "healthy", "service": "omi-slack-messages"}
 
 
+# ============================================================================
+# Chat Tools Endpoints for OMI App Store
+# ============================================================================
+
+@app.post("/api/send_message")
+async def chat_tool_send_message(request: Request):
+    """
+    Chat Tool: Send a message to a Slack channel
+    
+    Expected payload:
+    {
+        "uid": "user_id",
+        "app_id": "slack_app_id",
+        "tool_name": "send_slack_message",
+        "channel": "#general",
+        "message": "Hello from Omi!"
+    }
+    """
+    try:
+        data = await request.json()
+        
+        # Validate required parameters
+        if not data:
+            return JSONResponse(
+                content={'error': 'Missing request body'},
+                status_code=400
+            )
+        
+        uid = data.get('uid')
+        channel = data.get('channel')
+        message = data.get('message')
+        
+        if not uid:
+            return JSONResponse(
+                content={'error': 'Missing uid parameter'},
+                status_code=400
+            )
+        if not channel:
+            return JSONResponse(
+                content={'error': 'Missing required parameter: channel'},
+                status_code=400
+            )
+        if not message:
+            return JSONResponse(
+                content={'error': 'Missing required parameter: message'},
+                status_code=400
+            )
+        
+        # Get user's authentication token
+        user = SimpleUserStorage.get_user(uid)
+        if not user or not user.get("access_token"):
+            return JSONResponse(
+                content={'error': 'Slack not connected. Please connect your Slack account.'},
+                status_code=401
+            )
+        
+        access_token = user["access_token"]
+        
+        # Get channels to find channel ID
+        channels = slack_client.list_channels(access_token)
+        channel_id = None
+        channel_name = channel
+        
+        # Try to find channel by name (handle # prefix)
+        channel_search = channel.lstrip('#').lower()
+        for ch in channels:
+            if ch["name"].lower() == channel_search:
+                channel_id = ch["id"]
+                channel_name = ch["name"]
+                break
+        
+        if not channel_id:
+            return JSONResponse(
+                content={'error': f'Channel "{channel}" not found. Please check the channel name.'},
+                status_code=400
+            )
+        
+        # Send message
+        result = await slack_client.send_message(
+            access_token=access_token,
+            channel_id=channel_id,
+            text=message
+        )
+        
+        if result and result.get("success"):
+            return JSONResponse(
+                content={'result': f'Successfully sent message to #{channel_name}'}
+            )
+        else:
+            error = result.get("error", "Unknown error") if result else "Failed to send message"
+            return JSONResponse(
+                content={'error': f'Failed to send message: {error}'},
+                status_code=400
+            )
+            
+    except Exception as e:
+        print(f"❌ Error in send_message tool: {e}", flush=True)
+        import traceback
+        traceback.print_exc()
+        return JSONResponse(
+            content={'error': f'Internal server error: {str(e)}'},
+            status_code=500
+        )
+
+
+@app.post("/api/search_messages")
+async def chat_tool_search_messages(request: Request):
+    """
+    Chat Tool: Search for messages in Slack
+    
+    Expected payload:
+    {
+        "uid": "user_id",
+        "app_id": "slack_app_id",
+        "tool_name": "search_slack_messages",
+        "query": "meeting notes",
+        "channel": "#general"  # optional
+    }
+    """
+    try:
+        data = await request.json()
+        
+        uid = data.get('uid')
+        query = data.get('query')
+        channel = data.get('channel')
+        
+        if not uid:
+            return JSONResponse(
+                content={'error': 'Missing uid parameter'},
+                status_code=400
+            )
+        if not query:
+            return JSONResponse(
+                content={'error': 'Missing required parameter: query'},
+                status_code=400
+            )
+        
+        # Get user's authentication token
+        user = SimpleUserStorage.get_user(uid)
+        if not user or not user.get("access_token"):
+            return JSONResponse(
+                content={'error': 'Slack not connected. Please connect your Slack account.'},
+                status_code=401
+            )
+        
+        access_token = user["access_token"]
+        
+        # Convert channel name to ID if needed
+        channel_id = None
+        if channel:
+            channels = slack_client.list_channels(access_token)
+            channel_search = channel.lstrip('#').lower()
+            for ch in channels:
+                if ch["name"].lower() == channel_search:
+                    channel_id = ch["id"]
+                    break
+        
+        # Search messages
+        result = await slack_client.search_messages(
+            access_token=access_token,
+            query=query,
+            channel=channel_id
+        )
+        
+        if result and result.get("success"):
+            matches = result.get("matches", [])
+            if not matches:
+                return JSONResponse(
+                    content={'result': f'No messages found for "{query}"'}
+                )
+            
+            # Format results
+            results = []
+            for msg in matches[:5]:  # Limit to 5 results
+                text = msg.get('text', '')[:100]  # Truncate long messages
+                channel_name = msg.get('channel', {}).get('name', 'unknown')
+                username = msg.get('username', 'Unknown')
+                results.append(f"- {text} (by @{username} in #{channel_name})")
+            
+            result_text = f'Found {len(matches)} message(s):\n' + '\n'.join(results)
+            return JSONResponse(
+                content={'result': result_text}
+            )
+        else:
+            error = result.get("error", "Unknown error") if result else "Failed to search messages"
+            return JSONResponse(
+                content={'error': f'Failed to search messages: {error}'},
+                status_code=400
+            )
+            
+    except Exception as e:
+        print(f"❌ Error in search_messages tool: {e}", flush=True)
+        import traceback
+        traceback.print_exc()
+        return JSONResponse(
+            content={'error': f'Internal server error: {str(e)}'},
+            status_code=500
+        )
+
+
+@app.post("/api/search_channels")
+async def chat_tool_search_channels(request: Request):
+    """
+    Chat Tool: Search for Slack channels
+    
+    Expected payload:
+    {
+        "uid": "user_id",
+        "app_id": "slack_app_id",
+        "tool_name": "search_slack_channels",
+        "query": "general"
+    }
+    """
+    try:
+        data = await request.json()
+        
+        uid = data.get('uid')
+        query = data.get('query')
+        
+        if not uid:
+            return JSONResponse(
+                content={'error': 'Missing uid parameter'},
+                status_code=400
+            )
+        if not query:
+            return JSONResponse(
+                content={'error': 'Missing required parameter: query'},
+                status_code=400
+            )
+        
+        # Get user's authentication token
+        user = SimpleUserStorage.get_user(uid)
+        if not user or not user.get("access_token"):
+            return JSONResponse(
+                content={'error': 'Slack not connected. Please connect your Slack account.'},
+                status_code=401
+            )
+        
+        access_token = user["access_token"]
+        
+        # Search channels
+        matching_channels = slack_client.search_channels(
+            access_token=access_token,
+            query=query
+        )
+        
+        if not matching_channels:
+            return JSONResponse(
+                content={'result': f'No channels found matching "{query}"'}
+            )
+        
+        # Format results
+        results = []
+        for channel in matching_channels[:10]:  # Limit to 10 results
+            privacy = "🔒 Private" if channel.get('is_private') else "# Public"
+            member_status = " (member)" if channel.get('is_member') else " (not a member)"
+            results.append(f"- #{channel['name']} - {privacy}{member_status}")
+        
+        result_text = f'Found {len(matching_channels)} channel(s):\n' + '\n'.join(results)
+        return JSONResponse(
+            content={'result': result_text}
+        )
+            
+    except Exception as e:
+        print(f"❌ Error in search_channels tool: {e}", flush=True)
+        import traceback
+        traceback.print_exc()
+        return JSONResponse(
+            content={'error': f'Internal server error: {str(e)}'},
+            status_code=500
+        )
+
+
 def get_mobile_css() -> str:
     """Returns Slack-inspired dark theme CSS styles."""
     return """
