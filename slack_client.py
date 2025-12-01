@@ -329,30 +329,47 @@ class SlackClient:
                     query_lower = query.lower().strip()
                     is_recent_query = (
                         not query_lower or 
-                        query_lower in ["today", "recent", "latest", "last", "new"]
+                        query_lower in ["today", "recent", "latest", "last", "new", "*", "all"]
                     )
                     
-                    if is_recent_query:
-                        print(f"📅 Using channel history for recent messages in #{channel_name}", flush=True)
-                        # Get messages from today (last 24 hours)
+                    # Also check if query contains date filters (after/before) - use search for those
+                    has_date_filter = "after:" in query_lower or "before:" in query_lower
+                    
+                    if is_recent_query and not has_date_filter:
+                        print(f"📅 Using channel history for recent messages in #{channel_name} (query: '{query}')", flush=True)
+                        # Get messages from today (last 24 hours) or all recent if query is '*'
                         from datetime import datetime, timedelta
-                        yesterday = datetime.now() - timedelta(days=1)
-                        oldest_timestamp = yesterday.timestamp()
+                        
+                        # For '*' or 'all', get more messages (last 7 days), otherwise just today
+                        if query_lower in ["*", "all"]:
+                            days_back = 7
+                            limit = 200
+                        else:
+                            days_back = 1
+                            limit = 100
+                        
+                        cutoff_date = datetime.now() - timedelta(days=days_back)
+                        oldest_timestamp = cutoff_date.timestamp()
                         
                         history_result = self.get_channel_history(
                             access_token=access_token,
                             channel_id=channel_id,
-                            limit=100,
+                            limit=limit,
                             oldest=oldest_timestamp
                         )
                         
                         if history_result and history_result.get("success"):
                             messages = history_result.get("messages", [])
+                            print(f"📊 Got {len(messages)} messages from channel history", flush=True)
+                            
                             # Filter out bot messages and system messages
                             user_messages = [
                                 msg for msg in messages 
                                 if not msg.get("bot_id") and not msg.get("subtype")
                             ]
+                            
+                            print(f"📊 Filtered to {len(user_messages)} user messages", flush=True)
+                            
                             return {
                                 "success": True,
                                 "matches": user_messages,
@@ -360,8 +377,8 @@ class SlackClient:
                                 "source": "channel_history"
                             }
                         else:
-                            # Fall back to search if history fails
-                            print(f"⚠️  Channel history failed, falling back to search", flush=True)
+                            error = history_result.get("error", "Unknown error") if history_result else "Failed"
+                            print(f"⚠️  Channel history failed ({error}), falling back to search", flush=True)
             
             # Use search API for general searches
             search_query = query
