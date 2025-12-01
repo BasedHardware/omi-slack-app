@@ -1373,18 +1373,14 @@ async def chat_tool_search_channels(request: Request):
         data = await request.json()
         
         uid = data.get('uid')
-        query = data.get('query')
+        query = data.get('query', '')  # Allow empty query to list all channels
         
         if not uid:
             return JSONResponse(
                 content={'error': 'Missing uid parameter'},
                 status_code=400
             )
-        if not query:
-            return JSONResponse(
-                content={'error': 'Missing required parameter: query'},
-                status_code=400
-            )
+        # Query is optional - if empty or "all", will return all channels
         
         # Get user's authentication token
         user = SimpleUserStorage.get_user(uid)
@@ -1396,25 +1392,43 @@ async def chat_tool_search_channels(request: Request):
         
         access_token = user["access_token"]
         
-        # Search channels
+        # Log the request
+        print(f"🔍 Search channels request - uid: {uid[:10]}..., query: '{query}'", flush=True)
+        
+        # Search channels (empty query or "all" returns all channels)
         matching_channels = slack_client.search_channels(
             access_token=access_token,
-            query=query
+            query=query or "all"
         )
         
+        print(f"📊 Found {len(matching_channels)} matching channels", flush=True)
+        
+        # Log channel details for debugging
+        if matching_channels:
+            for ch in matching_channels[:5]:  # Log first 5
+                print(f"   - #{ch['name']} ({'private' if ch.get('is_private') else 'public'}, {'member' if ch.get('is_member') else 'not member'})", flush=True)
+        
         if not matching_channels:
+            query_display = query if query else "all channels"
             return JSONResponse(
-                content={'result': f'No channels found matching "{query}"'}
+                content={'result': f'No channels found matching "{query_display}"'}
             )
         
         # Format results
         results = []
-        for channel in matching_channels[:10]:  # Limit to 10 results
+        # Show up to 20 channels (increased from 10)
+        for channel in matching_channels[:20]:
             privacy = "🔒 Private" if channel.get('is_private') else "# Public"
             member_status = " (member)" if channel.get('is_member') else " (not a member)"
             results.append(f"- #{channel['name']} - {privacy}{member_status}")
         
-        result_text = f'Found {len(matching_channels)} channel(s):\n' + '\n'.join(results)
+        # If there are more channels, mention it
+        total_count = len(matching_channels)
+        if total_count > 20:
+            result_text = f'Found {total_count} channel(s) (showing first 20):\n' + '\n'.join(results)
+        else:
+            result_text = f'Found {total_count} channel(s):\n' + '\n'.join(results)
+        
         return JSONResponse(
             content={'result': result_text}
         )

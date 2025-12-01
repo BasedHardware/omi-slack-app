@@ -85,37 +85,83 @@ class SlackClient:
     
     def list_channels(self, access_token: str) -> List[Dict]:
         """
-        List all channels the bot has access to (public channels, private groups, DMs).
+        List all channels the user has access to (public channels, private groups).
         Returns list of {id, name, is_channel, is_group, is_im, is_private}
+        Handles pagination to get all channels.
         """
         client = WebClient(token=access_token)
         channels = []
         
         try:
-            # Get public channels
-            result = client.conversations_list(
-                types="public_channel,private_channel",
-                exclude_archived=True,
-                limit=200
-            )
+            cursor = None
+            page_count = 0
             
-            for channel in result.get("channels", []):
-                channels.append({
-                    "id": channel["id"],
-                    "name": channel["name"],
-                    "is_channel": channel.get("is_channel", False),
-                    "is_group": channel.get("is_group", False),
-                    "is_private": channel.get("is_private", False),
-                    "is_member": channel.get("is_member", False)
-                })
+            while True:
+                # Get channels with pagination
+                params = {
+                    "types": "public_channel,private_channel",
+                    "exclude_archived": True,
+                    "limit": 200
+                }
+                if cursor:
+                    params["cursor"] = cursor
+                
+                result = client.conversations_list(**params)
+                
+                if not result.get("ok"):
+                    error = result.get("error", "Unknown error")
+                    print(f"❌ Error listing channels: {error}", flush=True)
+                    break
+                
+                page_channels = result.get("channels", [])
+                page_count += 1
+                
+                for channel in page_channels:
+                    channel_info = {
+                        "id": channel["id"],
+                        "name": channel["name"],
+                        "is_channel": channel.get("is_channel", False),
+                        "is_group": channel.get("is_group", False),
+                        "is_private": channel.get("is_private", False),
+                        "is_member": channel.get("is_member", False)
+                    }
+                    channels.append(channel_info)
+                    # Log each channel for debugging
+                    member_status = "member" if channel_info["is_member"] else "not a member"
+                    privacy = "private" if channel_info["is_private"] else "public"
+                    print(f"  📢 channel: #{channel_info['name']} ({privacy}, {member_status})", flush=True)
+                
+                # Check if there are more pages
+                response_metadata = result.get("response_metadata", {})
+                cursor = response_metadata.get("next_cursor")
+                
+                if not cursor:
+                    break
+            
+            # Log summary
+            public_channels = [c for c in channels if not c.get("is_private")]
+            private_channels = [c for c in channels if c.get("is_private")]
+            member_channels = [c for c in channels if c.get("is_member")]
+            
+            print(f"✅ Listed {len(channels)} total channels across {page_count} page(s)", flush=True)
+            print(f"   📊 Breakdown: {len(public_channels)} public, {len(private_channels)} private", flush=True)
+            print(f"   👤 User is member of: {len(member_channels)} channels", flush=True)
+            
+            # Important note about Slack API behavior
+            if len(channels) == 1:
+                print(f"⚠️  Only 1 channel found - Slack API only returns channels user is a member of", flush=True)
+                print(f"⚠️  To see more channels, user needs to join them in Slack first", flush=True)
             
             return channels
             
         except SlackApiError as e:
-            print(f"❌ Error listing channels: {e.response['error']}", flush=True)
+            error_msg = e.response.get('error', str(e))
+            print(f"❌ Error listing channels: {error_msg}", flush=True)
             return []
         except Exception as e:
             print(f"❌ Error listing channels: {e}", flush=True)
+            import traceback
+            traceback.print_exc()
             return []
     
     async def send_message(
@@ -255,6 +301,7 @@ class SlackClient:
         """
         Search for channels matching the query string.
         Returns list of matching channels.
+        If query is empty or "all", returns all channels.
         """
         client = WebClient(token=access_token)
         matching_channels = []
@@ -263,13 +310,19 @@ class SlackClient:
             # Get all channels
             all_channels = self.list_channels(access_token)
             
+            # If query is empty or "all", return all channels
+            if not query or query.lower().strip() == "all":
+                print(f"🔍 Returning all {len(all_channels)} channels (query: '{query}')", flush=True)
+                return all_channels
+            
             # Filter channels by query (case-insensitive)
-            query_lower = query.lower().lstrip('#')
+            query_lower = query.lower().lstrip('#').strip()
             for channel in all_channels:
                 channel_name = channel.get("name", "").lower()
                 if query_lower in channel_name:
                     matching_channels.append(channel)
             
+            print(f"🔍 Found {len(matching_channels)} channels matching '{query}'", flush=True)
             return matching_channels
             
         except Exception as e:
