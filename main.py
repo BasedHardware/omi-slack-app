@@ -1305,37 +1305,63 @@ async def chat_tool_search_messages(request: Request):
         
         # Convert channel name to ID if needed
         channel_id = None
+        channel_name = None
         if channel:
             channels = slack_client.list_channels(access_token)
             channel_search = channel.lstrip('#').lower()
             for ch in channels:
                 if ch["name"].lower() == channel_search:
                     channel_id = ch["id"]
+                    channel_name = ch["name"]
                     break
         
         # Search messages
+        print(f"🔍 Searching messages - query: '{query}', channel: '{channel_name or channel}'", flush=True)
         result = await slack_client.search_messages(
             access_token=access_token,
             query=query,
-            channel=channel_id
+            channel=channel_id if channel_id else (channel if channel else None)
         )
         
         if result and result.get("success"):
             matches = result.get("matches", [])
+            source = result.get("source", "search")
+            
             if not matches:
+                query_display = f'in #{channel_name}' if channel_name else ''
                 return JSONResponse(
-                    content={'result': f'No messages found for "{query}"'}
+                    content={'result': f'No messages found for "{query}" {query_display}'.strip()}
                 )
             
             # Format results
             results = []
-            for msg in matches[:5]:  # Limit to 5 results
-                text = msg.get('text', '')[:100]  # Truncate long messages
-                channel_name = msg.get('channel', {}).get('name', 'unknown')
-                username = msg.get('username', 'Unknown')
-                results.append(f"- {text} (by @{username} in #{channel_name})")
+            # Show up to 10 results for channel history, 5 for search
+            max_results = 10 if source == "channel_history" else 5
             
-            result_text = f'Found {len(matches)} message(s):\n' + '\n'.join(results)
+            for msg in matches[:max_results]:
+                text = msg.get('text', '')
+                # For channel history, messages have different structure
+                if source == "channel_history":
+                    # Channel history messages have 'user' field, not 'username'
+                    user_id = msg.get('user', 'Unknown')
+                    # Try to get username from user info if available
+                    username = f"user_{user_id[:8]}" if user_id != 'Unknown' else 'Unknown'
+                    # Format timestamp if available
+                    ts = msg.get('ts', '')
+                    results.append(f"- {text[:150]} (by @{username})")
+                else:
+                    # Search API format
+                    channel_name_msg = msg.get('channel', {}).get('name', channel_name or 'unknown')
+                    username = msg.get('username', 'Unknown')
+                    text_truncated = text[:100] if len(text) > 100 else text
+                    results.append(f"- {text_truncated} (by @{username} in #{channel_name_msg})")
+            
+            source_note = " (from today)" if source == "channel_history" else ""
+            result_text = f'Found {len(matches)} message(s){source_note}:\n' + '\n'.join(results)
+            
+            if len(matches) > max_results:
+                result_text += f'\n... and {len(matches) - max_results} more message(s)'
+            
             return JSONResponse(
                 content={'result': result_text}
             )

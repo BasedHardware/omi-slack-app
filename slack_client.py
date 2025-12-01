@@ -233,6 +233,59 @@ class SlackClient:
                 "error": str(e)
             }
     
+    def get_channel_history(
+        self,
+        access_token: str,
+        channel_id: str,
+        limit: int = 100,
+        oldest: Optional[float] = None
+    ) -> Optional[dict]:
+        """
+        Get message history from a specific channel.
+        Use this for getting recent messages (like today's messages).
+        Requires channels:history scope.
+        """
+        client = WebClient(token=access_token)
+        
+        try:
+            params = {
+                "channel": channel_id,
+                "limit": limit
+            }
+            if oldest:
+                params["oldest"] = oldest
+            
+            result = client.conversations_history(**params)
+            
+            if result.get("ok"):
+                messages = result.get("messages", [])
+                return {
+                    "success": True,
+                    "messages": messages,
+                    "total": len(messages)
+                }
+            else:
+                return {
+                    "success": False,
+                    "error": result.get("error", "Unknown error")
+                }
+                
+        except SlackApiError as e:
+            error_msg = e.response.get('error', str(e))
+            print(f"❌ Slack API error getting channel history: {error_msg}", flush=True)
+            return {
+                "success": False,
+                "error": error_msg
+            }
+        except Exception as e:
+            print(f"❌ Error getting channel history: {e}", flush=True)
+            import traceback
+            traceback.print_exc()
+            return {
+                "success": False,
+                "error": str(e)
+            }
+    
     async def search_messages(
         self,
         access_token: str,
@@ -241,16 +294,79 @@ class SlackClient:
     ) -> Optional[dict]:
         """
         Search for messages in Slack.
+        For recent messages in a specific channel, prefers using channel history.
         Returns list of matching messages.
         """
         client = WebClient(token=access_token)
         
         try:
-            # Build search query
+            # If searching in a specific channel and query is simple (like "today" or empty),
+            # use channel history instead of search API for better results
+            if channel:
+                # Find channel ID
+                channels = self.list_channels(access_token)
+                channel_id = None
+                channel_name = None
+                
+                if not channel.startswith('C') and not channel.startswith('G'):
+                    # It's a channel name, find the ID
+                    channel_search = channel.lower().lstrip('#')
+                    for ch in channels:
+                        if ch["name"].lower() == channel_search:
+                            channel_id = ch["id"]
+                            channel_name = ch["name"]
+                            break
+                else:
+                    channel_id = channel
+                    # Find channel name
+                    for ch in channels:
+                        if ch["id"] == channel_id:
+                            channel_name = ch["name"]
+                            break
+                
+                if channel_id:
+                    # Check if query is asking for recent messages (today, recent, etc.)
+                    query_lower = query.lower().strip()
+                    is_recent_query = (
+                        not query_lower or 
+                        query_lower in ["today", "recent", "latest", "last", "new"]
+                    )
+                    
+                    if is_recent_query:
+                        print(f"📅 Using channel history for recent messages in #{channel_name}", flush=True)
+                        # Get messages from today (last 24 hours)
+                        from datetime import datetime, timedelta
+                        yesterday = datetime.now() - timedelta(days=1)
+                        oldest_timestamp = yesterday.timestamp()
+                        
+                        history_result = self.get_channel_history(
+                            access_token=access_token,
+                            channel_id=channel_id,
+                            limit=100,
+                            oldest=oldest_timestamp
+                        )
+                        
+                        if history_result and history_result.get("success"):
+                            messages = history_result.get("messages", [])
+                            # Filter out bot messages and system messages
+                            user_messages = [
+                                msg for msg in messages 
+                                if not msg.get("bot_id") and not msg.get("subtype")
+                            ]
+                            return {
+                                "success": True,
+                                "matches": user_messages,
+                                "total": len(user_messages),
+                                "source": "channel_history"
+                            }
+                        else:
+                            # Fall back to search if history fails
+                            print(f"⚠️  Channel history failed, falling back to search", flush=True)
+            
+            # Use search API for general searches
             search_query = query
             if channel:
                 # If channel is provided, search within that channel
-                # First, try to find channel ID if channel name was provided
                 if not channel.startswith('C') and not channel.startswith('G'):
                     # It's a channel name, need to find the ID
                     channels = self.list_channels(access_token)
@@ -264,6 +380,7 @@ class SlackClient:
                 else:
                     search_query = f"in:{channel} {query}"
             
+            print(f"🔍 Using search API with query: '{search_query}'", flush=True)
             result = client.search_messages(query=search_query)
             
             if result.get("ok"):
@@ -271,7 +388,8 @@ class SlackClient:
                 return {
                     "success": True,
                     "matches": matches,
-                    "total": len(matches)
+                    "total": len(matches),
+                    "source": "search"
                 }
             else:
                 return {
