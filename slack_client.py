@@ -21,7 +21,9 @@ class SlackClient:
         Uses USER token scopes so messages appear as sent by the user, not a bot.
         """
         # User token scopes (messages appear as the user)
-        user_scopes = "channels:read,chat:write,groups:read,users:read"
+        # search:read is required for searching messages
+        # channels:history is required for reading channel message history
+        user_scopes = "channels:read,channels:history,chat:write,groups:read,users:read,search:read"
         
         auth_url = (
             f"https://slack.com/oauth/v2/authorize?"
